@@ -6,6 +6,7 @@ const newCity = (req, res, next) => {
 };
 
 const getNames = async (req, res, next) => {
+    res.header("Access-Control-Allow-Origin", "*");
     await res.json(cities.filter(el => el.name.substring(0, req.params.prefix.length) === req.params.prefix));
 };
 
